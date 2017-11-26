@@ -1,0 +1,44 @@
+Sinatra
+==========================================
+
+Druhý úkol do předmětu Ruby PV249.
+info na vyučijícího: Tomáš Hrabal - fil.hrabal@gmail.com
+
+Zadání
+------
+
+Naše aplikace bude simulovat API pro mobily a bude pracovat s databází, jež využíváte ve všech vlastních projektech:
+
+1. aplikace musí projít testem přes rubocop
+2. aplikace musí projít všemi testy, které pokrývají předpokládané chování API
+   Pro přidávání a mazání komentáře nebudeme brát v potaz autentizaci a vytváření uživatele, protože by to zadání příliš komplikovalo
+
+2. je třeba doimplementovat helpery DatabaseHelper (dotazuje se vaší databáze) a app.rb s logikou
+
+3. `rake` spustí základní kontroly pro úkol: rubocop a testy. Před prvním spuštěním nezapomeňte
+na `bundle install`.
+  * do složky si kamkoliv zkopírujte vaši databázi a nakonfigurujte ji přes config/database.yml
+  * do databáze předtím přidejte tabulku pro komentáře, která bude obsahovat položky:
+      - comment - char
+      - author - char
+      - book_id - integer
+  * databázi poté přidejte do repozitáře
+  * `bundle exec rake rubocop` spustí pouze rubocop
+  * `bundle exec rake test` spustí pouze testy
+  * pro spuštění aplikace máte 2 možnosti
+  ** `bundle exec thin start` (nerefreshuje změněné soubory)
+  ** můžete si v Gemfile odkomentovat shotgun (nefunguje na win) a spouštět přes `bundle exec shotgun`
+  ** po spuštění byste měli vidět počet knih ve vaší aplikaci
+
+Podmínky pro uznání řešení:
+
+1. nebudete upravovat soubor rubocop.yml, případně rspec testy
+2. projdou všechny testy, zároveň ale bude naimplementována logika aplikace (tzn. ne že aplikace bude pouze vracet předpřipravená data)
+
+Může se hodit
+-------------
+
+* [Sequel] http://sequel.jeremyevans.net/rdoc/files/doc/cheat_sheet_rdoc.html
+
+Odevzdání
+---------

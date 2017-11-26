@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+
+gem 'multi_json'
+gem 'sinatra'
+gem 'rspec'
+gem 'rake'
+gem 'rack-test'
+gem 'sequel'
+gem 'rubocop'
+gem 'sqlite3'
+gem 'thin'
+gem 'pry'
+# for automatic refreshing server after files change uncomment shotgun
+gem 'rerun'
+gem 'shotgun'

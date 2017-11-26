@@ -1,0 +1,14 @@
+development:
+  database: books
+  host: localhost
+  adapter: sqlite
+  user:
+  password:
+
+test:
+  database: books
+  host: localhost
+  adapter: sqlite
+  user:
+  password:
+
