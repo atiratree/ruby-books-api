@@ -22,6 +22,8 @@ na `bundle install`.
       - comment - char
       - author - char
       - book_id - integer
+    přes příkaz:
+    `bundle exec rake db:migrate RACK_ENV=test`
   * databázi poté přidejte do repozitáře
   * `bundle exec rake rubocop` spustí pouze rubocop
   * `bundle exec rake test` spustí pouze testy

@@ -10,6 +10,7 @@ gem 'rubocop'
 gem 'sqlite3'
 gem 'thin'
 gem 'pry'
+gem 'sequel-rake'
 # for automatic refreshing server after files change uncomment shotgun
 # gem 'rerun'
 # gem 'shotgun'
