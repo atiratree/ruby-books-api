@@ -11,5 +11,5 @@ gem 'sqlite3'
 gem 'thin'
 gem 'pry'
 # for automatic refreshing server after files change uncomment shotgun
-gem 'rerun'
-gem 'shotgun'
+# gem 'rerun'
+# gem 'shotgun'
