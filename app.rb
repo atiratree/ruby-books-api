@@ -1,4 +1,3 @@
-# encoding:utf-8
 require 'database_helper'
 
 require 'multi_json'

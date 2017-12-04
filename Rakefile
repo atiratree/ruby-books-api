@@ -29,6 +29,6 @@ namespace :db do
 
   task :migrate_down => :database do
     require "sequel/extensions/migration"
-    Sequel::IntegerMigrator.new(DB, File.expand_path("../config/migrations", __FILE__), {:target => 0}).run
+    Sequel::IntegerMigrator.new(DB, File.expand_path("../config/migrations", __FILE__), :target => 0).run
   end
 end
