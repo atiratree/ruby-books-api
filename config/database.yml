@@ -1,3 +1,10 @@
+production:
+  database: books_production
+  host: localhost
+  adapter: sqlite
+  user:
+  password:
+
 development:
   database: books_dev
   host: localhost
