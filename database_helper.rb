@@ -9,7 +9,7 @@ class DatabaseHelper
     end
 
     def get(id:)
-      # TODO
+      DB[:books].where(id: id)
     end
 
     def search(title:)
@@ -17,19 +17,19 @@ class DatabaseHelper
     end
 
     def add_comment(book_id:, comment:, author:)
-      # TODO
+      DB[:comments].insert(book_id: book_id, comment: comment, author: author)
     end
 
     def update_comment(comment_id:, comment:, author:)
-      # TODO
+      DB[:comments].where(id: comment_id).update(comment: comment, author: author)
     end
 
     def delete_comment(comment_id:)
-      # TODO
+      DB[:comments].where(id: comment_id).delete
     end
 
     def comments(book_id:)
-      # TODO
+      DB[:comments].where(book_id: book_id)
     end
 
     def add_book(title:)
@@ -40,4 +40,12 @@ class DatabaseHelper
       DB[:books].where(id: id).delete
     end
   end
+end
+
+def book_mapper(item)
+  { id: item[:id], title: item[:title] }
+end
+
+def comment_mapper(item)
+  { id: item[:id], book_id: item[:book_id], comment: item[:comment], author: item[:author] }
 end

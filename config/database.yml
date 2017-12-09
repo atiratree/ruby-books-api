@@ -1,12 +1,12 @@
 development:
-  database: books
+  database: books_dev
   host: localhost
   adapter: sqlite
   user:
   password:
 
 test:
-  database: books
+  database: books_test
   host: localhost
   adapter: sqlite
   user:

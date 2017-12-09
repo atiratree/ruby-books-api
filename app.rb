@@ -28,9 +28,7 @@ class BooksApi < Sinatra::Base
 
   # find books with title
   get '/search' do
-    DatabaseHelper.search(title: params['title']).map do |item|
-      { id: item[:id], title: item[:title] }
-    end
+    DatabaseHelper.search(title: params['title']).map(&method(:book_mapper))
   end
 
   # add new comment into database
@@ -44,21 +42,26 @@ class BooksApi < Sinatra::Base
 
   # return book info
   get '/book/:id' do
-    # TODO
+    DatabaseHelper.get(id: params['id']).map(&method(:book_mapper)).first
   end
 
   # return comments from database
   get '/book/:book_id/comments' do
-    # TODO
+    DatabaseHelper.comments(book_id: params['book_id']).map(&method(:comment_mapper))
   end
 
   # update comment in database
   put '/book/:book_id/comment/:id' do
-    # TODO
+    rows_changed = DatabaseHelper.update_comment(
+      comment_id: params[:id],
+      comment: params[:comment],
+      author: params[:author])
+    { status: rows_changed > 0 ? STATUS[:success] : STATUS[:fail] }
   end
 
   # delete comment from database
   delete '/book/:book_id/comment/:id' do
-    # TODO
+    rows_changed = DatabaseHelper.delete_comment(comment_id: params[:id])
+    { status: rows_changed > 0 ? STATUS[:success] : STATUS[:fail] }
   end
 end
